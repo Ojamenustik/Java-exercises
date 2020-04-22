@@ -18,9 +18,11 @@ public class Main {
 
         int numberOfCases = scanner.nextInt();
         scanner.nextLine();
+//        scanner.nextLine();
 
         for(int i = 0; i < numberOfCases; i++){
             dates.add(scanner.nextLine());
+//            scanner.nextLine();
         }
 
 //        for(String date : dates){
