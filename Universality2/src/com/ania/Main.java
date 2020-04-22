@@ -20,7 +20,7 @@ public class Main {
             }
         }
 
-        for(int liczba = 1; a + (liczba*c) < b; ++liczba){
+        for(int liczba = 0; a + (liczba*c) < b; ++liczba){
             System.out.println(a + (liczba*c) );
         }
 
