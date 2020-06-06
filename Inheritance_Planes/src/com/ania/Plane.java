@@ -4,7 +4,7 @@ public class Plane {
 
     private int rangeInKM;
     private int amountOfFuelInL;
-    
+
     public void setAmountOfFuelInL(int amountOfFuelInL) {
         this.amountOfFuelInL = amountOfFuelInL < 0 ? 0 : amountOfFuelInL;
     }
