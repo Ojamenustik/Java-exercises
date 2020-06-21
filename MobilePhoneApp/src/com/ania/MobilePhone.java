@@ -19,13 +19,19 @@ public class MobilePhone {
             System.out.println("Contact is already on file");
             return false;
         }
-        if (contact.getPhoneNumber().isEmpty()) {
+        if (contact.getPhoneNumber().get(0).isEmpty()) {
             System.out.println("No phone number provided");
             return false;
         }
+        int index;
         for (String key: myContacts.keySet()) {
-            myContacts.get(key).getPhoneNumber().indexOf(contact.getPhoneNumber().get(0));
+             index = myContacts.get(key).getPhoneNumber().indexOf(contact.getPhoneNumber().get(0));
+            if (index != -1) {
+                System.out.println("Number already in contact list");
+                return false;
+            }
         }
+
         myContacts.put(contact.getName(), contact);
         return true;
     }
@@ -33,7 +39,10 @@ public class MobilePhone {
     public boolean updateContact(Contact oldContact, Contact newContact) {
         if(myContacts.get(oldContact.getName())!= null){
             ArrayList<String> phoneNumbers = oldContact.getPhoneNumber();
-            phoneNumbers.addAll(newContact.getPhoneNumber());
+
+            if(!newContact.getPhoneNumber().get(0).isEmpty()) {
+                phoneNumbers.add(newContact.getPhoneNumber().get(0));
+            }
             Contact contact =  Contact.createContact(newContact.getName(), phoneNumbers);
             myContacts.remove(oldContact.getName());
             myContacts.put(newContact.getName(), contact);

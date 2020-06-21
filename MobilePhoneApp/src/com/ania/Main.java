@@ -126,7 +126,7 @@ public class Main {
             return;
         }
 
-        System.out.println("Name: " + existingContactRecord.getName() + " phone number is " + existingContactRecord.getPhoneNumber());
+        System.out.println("Name: " + existingContactRecord.getName() + " phone number is " + existingContactRecord.getPhoneNumberToString());
     }
 
     private static void startPhone() {

@@ -30,7 +30,7 @@ public class Contact {
         for (String number : this.phoneNumbers) {
             phoneNumbers += number +", ";
         }
-        return phoneNumbers.substring(0, phoneNumbers.length()-3);
+        return phoneNumbers.substring(0, phoneNumbers.length()-2);
     }
 
 }
