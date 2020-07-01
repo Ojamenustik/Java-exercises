@@ -4,18 +4,28 @@ import java.util.*;
 
 public class Main {
 
-    // Driver Code
     public static void main(String[] args)
     {
 
-        // Declare and Initialize an array
-        int[] array = { 4, 4, 2, 2, 2, 2, 3, 3, 1, 1, 6, 7, 5 };
+        Scanner sc = new Scanner(System.in);
+
+        String data = sc.nextLine();
+        String lengthOfMessage = data.split(" ")[0];
+        String numberFromTaskDesc = data.split(" ")[1];
+        String numbers = sc.nextLine();
+        String array[] = numbers.split(" ");
+
+
+
+        int [] arr = new int [array.length];
+        for(int i=0; i<array.length; i++) {
+            arr[i] = Integer.parseInt(array[i]);
+        }
 
         Map<Integer, Integer> map = new HashMap<>();
         List<Integer> outputArray = new ArrayList<>();
 
-        // Assign elements and their count in the list and map
-        for (int current : array) {
+        for (int current : arr) {
             int count = map.getOrDefault(current, 0);
             map.put(current, count + 1);
             outputArray.add(current);
@@ -45,7 +55,6 @@ class SortComparator implements Comparator<Integer> {
     }
 
     // Compare the values
-    @Override
     public int compare(Integer k1, Integer k2)
     {
 
