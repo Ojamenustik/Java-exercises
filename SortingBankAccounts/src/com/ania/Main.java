@@ -1,14 +1,11 @@
 package com.ania;
 
-import java.io.IOException;
+import java.util.*;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
 
         StringBuilder sb = new StringBuilder();
         Scanner sc = new Scanner(System.in);
@@ -25,12 +22,19 @@ public class Main {
                 }
             }
 
-            Collections.sort(accountNumbers);
+            TreeMap<String, Integer> deduped = new TreeMap<>();
 
             for(String number : accountNumbers){
-                sb.append(number);
+                deduped.put(number,Collections.frequency(accountNumbers,number));
+            }
+
+            for(String i : deduped.keySet()){
+                sb.append(i);
+                sb.append(" ");
+                sb.append(deduped.get(i));
                 sb.append(System.getProperty("line.separator"));
             }
+
             sb.append(System.getProperty("line.separator"));
         }
 
